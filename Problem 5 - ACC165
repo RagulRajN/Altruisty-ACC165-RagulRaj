@@ -1,0 +1,32 @@
+// Online C++ compiler to run C++ program online
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+    int n;
+    cout<<"Enter Number Of Picecs :";
+    cin>>n;
+    cout<<"Enter Price Of Each :";
+    vector<int> arr(n,0);
+    for(int i=0;i<n;i++){
+        cin>>arr[i];
+    }
+    int m;
+   cout<<"Enter Vaule Of Money :";
+    cin>>m;
+    
+    int ret = 0;
+    int k;
+    for(int i=0;i<n;i++){
+        k=0;
+        for(int j=i;j<n;j++){
+            k+=arr[j];
+            if(k<=m){
+                ret = max(ret,j-i+1);
+            }
+        }
+    }
+    
+    cout<<"Output : "<<ret;
+  return 0 ;
+    
+}
